@@ -1,0 +1,30 @@
+# ============================================================
+# 竞品分析 Agent 系统 依赖清单
+# 安装方式: pip install -r requirements.txt
+# ============================================================
+
+# --- Web 框架 ---
+fastapi>=0.115.0          # FastAPI: 高性能异步 Web 框架，提供 REST API
+uvicorn[standard]>=0.30.0 # Uvicorn: ASGI 服务器，运行 FastAPI 应用
+
+# --- 数据校验与配置 ---
+pydantic>=2.5.0           # Pydantic: 数据校验，定义请求/响应模型
+pydantic-settings>=2.3.0  # pydantic-settings: 从 .env 文件读取配置
+python-dotenv>=1.0.0      # python-dotenv: 加载 .env 环境变量文件
+
+# --- LLM 调用 ---
+openai>=1.0.0             # OpenAI SDK: 兼容 OpenAI 协议的 API 调用（DeepSeek等）
+
+# --- Agent 框架 ---
+langgraph>=0.2.0          # LangGraph: 有状态 Agent 工作流编排
+langchain>=0.3.0          # LangChain: LLM 应用开发框架
+langchain-community>=0.3.0  # LangChain 社区扩展
+langchain-openai>=0.2.0   # LangChain 的 OpenAI 集成
+
+# --- 向量检索 (RAG) ---
+faiss-cpu>=1.8.0          # FAISS: Facebook 出品的高性能向量检索库（CPU版）
+sentence-transformers>=3.0.0  # Sentence-Transformers: 文本 Embedding 模型
+
+# --- 数据库 ---
+sqlalchemy>=2.0.0         # SQLAlchemy: Python SQL 工具包和 ORM
+aiosqlite>=0.20.0         # aiosqlite: SQLite 异步驱动（开发环境用 SQLite 代替 PostgreSQL）
